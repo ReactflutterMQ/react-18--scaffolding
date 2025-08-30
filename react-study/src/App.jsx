@@ -1,5 +1,6 @@
 import React from 'react';
-import Welcome from './components/Welcome';
+// import Welcome from './components/Welcome';
+import { Button } from 'antd';
 
 function App() {
   return (
@@ -8,7 +9,8 @@ function App() {
           <h2 className='box'>hello react</h2>
       </div>
       <p>1111111111</p>
-      <Welcome />
+      {/* <Welcome /> */}
+      <Button type="primary">Button</Button>
     </>
   );
 }
