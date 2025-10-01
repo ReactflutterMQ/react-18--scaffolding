@@ -9,7 +9,6 @@ const message = {
         message.render(<Message text={text} icon="✔" />)
     }
 }
-
 function Message(props) {
     const [ prop, setProp ] = useState(true)
     const nodeRef = useRef(null)

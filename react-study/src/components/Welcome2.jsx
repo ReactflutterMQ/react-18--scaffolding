@@ -1,6 +1,3 @@
-/*
-  错误边界来提升用户体验
-*/
 // react 17以后可以不用引入React
 // import React from 'react'
 
@@ -54,9 +51,9 @@ export default function Welcome() {
 } */
 
 import './Welcome.css'
-import { classnames } from 'classnames'
+import classnames from 'classnames'
 
-console.log('welcome');
+console.log('welcome2');
 
 /**
  * 欢迎组件
@@ -67,11 +64,11 @@ export default function Welcome() {
   // const myClass = 'box box2'
   const myClass = classnames({
     box: true,
-    box2: true
+    box2: false
   })
   return (
     <div className='Welcome'>
-      <h2 className={myClass}>这是一个标题</h2>
+      <h2 className={myClass}>这是另一个标题</h2>
     </div>
   )
 }
