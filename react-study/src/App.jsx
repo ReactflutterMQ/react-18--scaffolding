@@ -1,17 +1,16 @@
 import React from 'react';
+import { Outlet, Link } from 'react-router-dom';
 // import Welcome from './components/Welcome';
-import { Button } from 'antd';
 
 function App() {
   return (
-    <>
-      <div className="App">
-          <h2 className='box'>hello react</h2>
-      </div>
-      <p>1111111111</p>
-      {/* <Welcome /> */}
-      <Button type="primary">Button</Button>
-    </>
+    <div className="App">
+        <h1 className='box'>hello react</h1>
+        {/* <Outlet /> */}
+        <Link to='/'>首页</Link> |
+        <Link to='/about'>关于</Link>
+        <Outlet />
+    </div>
   );
 }
 
