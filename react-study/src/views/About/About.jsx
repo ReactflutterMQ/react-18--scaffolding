@@ -12,7 +12,7 @@ export default function About() {
     navigate('/about/foo/456')
   }
   const handleClick3 = () => {
-    navigate('/about/bar')
+    navigate('/about/bar', { state: { id: 123 } })
   }
   return (
     <>
