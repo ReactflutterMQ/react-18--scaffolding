@@ -1,4 +1,4 @@
-import { createBrowserRouter, createHashRouter, createRoutesFromElements, Route, Navigate } from 'react-router-dom';
+import { createBrowserRouter, createHashRouter, createRoutesFromElements, Route, Navigate, redirect } from 'react-router-dom';
 import App from '../App';
 import Home from '../views/Home/Home';
 import About from '../views/About/About';
@@ -31,7 +31,28 @@ const routes = [
                     },
                     {
                         path: 'bar',
-                        element: <Bar />
+                        element: <Bar />,
+                        loader:async() => { //react路由独享守卫
+                            /* console.log('bar');
+                            let ret = await new Promise((resolve) => {
+                                setTimeout(() => {
+                                    resolve({ errcode: 0 })
+                                }, 2000);
+                            })
+                            return ret */
+                            let ret = await new Promise((resolve) => {
+                                setTimeout(() => {
+                                    resolve({ errcode: Math.random() > 0.5 ? 0 : -1 })
+                                }, 2000);
+                            })
+                            if (ret.errcode === 0) {
+                                return ret
+                            } else {
+                                console.log('/login');
+                                // return <Navigate to='/login' />
+                                return redirect('/login') //loader中不能返回组件，只能返回redirect
+                            }
+                        }
                     },
                     {
                         path: '*', //当about路由下的子路由没有匹配到时，展示当前路由404页面
