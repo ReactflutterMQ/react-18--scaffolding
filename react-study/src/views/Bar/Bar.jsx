@@ -3,8 +3,8 @@ import React from 'react'
 import { useLoaderData } from 'react-router-dom'
 
 export default function Bar() {
-  const loaderData = useLoaderData()
-  console.log(loaderData);
+  // const loaderData = useLoaderData()
+  // console.log(loaderData);
   /* const [ searchParams, setSearchParams ] = useSearchParams()
   const location = useLocation()
   // console.log('location', location);
@@ -14,7 +14,6 @@ export default function Bar() {
     // console.log({ gender: 'male' });
     setSearchParams({ gender: 'male' })
   } */
-
 
   return (
     // <div onClick={handleClick}>Bar</div>
