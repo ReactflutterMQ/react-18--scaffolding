@@ -1,6 +1,7 @@
 import React from 'react'
+import store from '../../store'
 // import { useLocation, useSearchParams } from 'react-router-dom'
-import { useLoaderData } from 'react-router-dom'
+// import { useLoaderData } from 'react-router-dom'
 
 export default function Bar() {
   // const loaderData = useLoaderData()
@@ -17,6 +18,6 @@ export default function Bar() {
 
   return (
     // <div onClick={handleClick}>Bar</div>
-    <div>Bar</div>
+    <div>Bar, { store.getState().count }</div>
   )
 }

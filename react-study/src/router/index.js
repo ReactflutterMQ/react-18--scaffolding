@@ -54,7 +54,8 @@ export const routes = [
                         element: <Bar />,
                         meta: {
                             title: 'bar',
-                            auth: true
+                            // auth: true
+                            auth: false
                         },
                         /* loader:async() => { //react路由独享守卫
                             console.log('bar');
