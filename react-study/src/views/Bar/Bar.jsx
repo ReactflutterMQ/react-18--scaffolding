@@ -2,6 +2,7 @@ import React from 'react'
 import store from '../../store'
 // import { useLocation, useSearchParams } from 'react-router-dom'
 // import { useLoaderData } from 'react-router-dom'
+import { useSelector, useDispatch } from 'react-redux'
 
 export default function Bar() {
   // const loaderData = useLoaderData()
@@ -16,8 +17,13 @@ export default function Bar() {
     setSearchParams({ gender: 'male' })
   } */
 
+  const count = useSelector(state => state.counter.count)
+  const doubleCount = useSelector(state => state.counter.doubleCount)
+  const msg = useSelector(state => state.message.msg)
+  const upperMsg = useSelector(state => state.message.upperMsg)
+
   return (
     // <div onClick={handleClick}>Bar</div>
-    <div>Bar, { store.getState().count }</div>
+    <div>Bar, { count }, { doubleCount }, { msg }, { upperMsg }</div>
   )
 }

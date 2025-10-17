@@ -1,16 +1,22 @@
-import { createStore } from "redux";
+import { createStore, combineReducers } from "redux";
 import { composeWithDevTools } from "redux-devtools-extension";
 
-function counterReducer(state = { count: 0 }, action) {
-    switch (action.type) {
-        case 'inc':
-            // state.count++
-            return { count: state.count + 1 }
-        default:
-            return state
-    }
-}
+import counterReducer from "./modules/counter";
+import messageReducer from "./modules/message";
 
-const store = createStore(counterReducer, composeWithDevTools())
+// function counterReducer(state = { count: 0 }, action) {
+//     switch (action.type) {
+//         case 'inc':
+//             // state.count++
+//             return { count: state.count + action.payload }
+//         default:
+//             return state
+//     }
+// }
+
+const store = createStore(combineReducers({
+    counter: counterReducer,
+    message: messageReducer
+}), composeWithDevTools())
 
 export default store
