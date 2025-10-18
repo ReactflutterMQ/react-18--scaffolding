@@ -3,6 +3,7 @@ import './Foo.scss'
 // import { useParams } from 'react-router-dom'
 import store from '../../store'
 import { useSelector, useDispatch } from 'react-redux'
+import { handleCounterAction } from '../../store/modules/counter'
 
 export default function Foo() {
   // const [count, setCount] = useState(store.getState().count)
@@ -14,11 +15,15 @@ export default function Foo() {
   const dispatch = useDispatch()
   const handleClick = () => {
     // store.dispatch({ type: 'inc' })
-    dispatch({ type: 'counter/inc', payload: 5 })
+    /* dispatch({ type: 'counter/inc', payload: 5 })
     dispatch({
       type: 'message/change',
       payload: 'hi'
-    })
+    }) */
+   dispatch(handleCounterAction()).then(res => {
+    dispatch({ type: 'counter/inc', payload: 5 })
+    console.log(res)
+   })
   }
   // store.subscribe(() => {
   //   // console.log('subscribe');

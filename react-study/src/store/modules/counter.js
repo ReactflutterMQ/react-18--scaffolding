@@ -9,4 +9,16 @@ function counterReducer(state={count: 0}, action) {
     }
 }
 
+export function handleCounterAction() {
+    return (dispatch) => {
+        return new Promise((resolve, reject) => {
+            setTimeout(() => {
+/*                 dispatch({ type: 'counter/inc', payload: 5 })
+                resolve('success data') */
+                resolve('success data')
+            }, 2000);
+        })
+    }
+}
+
 export default counterReducer
