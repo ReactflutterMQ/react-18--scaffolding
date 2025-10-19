@@ -1,4 +1,19 @@
-import { createStore, combineReducers, applyMiddleware } from "redux";
+import { configureStore } from "@reduxjs/toolkit";
+import counterReducer from "./modules/counter";
+import messageReducer from "./modules/message";
+
+const store = configureStore({
+    reducer: {
+        counter: counterReducer,
+        message: messageReducer
+    }
+})
+
+export default store
+
+
+
+/* import { createStore, combineReducers, applyMiddleware } from "redux";
 import { composeWithDevTools } from "redux-devtools-extension";
 import { thunk } from "redux-thunk";
 
@@ -20,4 +35,4 @@ const store = createStore(combineReducers({
     message: messageReducer
 }), composeWithDevTools(applyMiddleware(thunk)))
 
-export default store
+export default store */
